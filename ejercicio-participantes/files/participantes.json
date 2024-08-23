@@ -1,0 +1,20 @@
+{
+    "1":{
+        "nombre": "Abner",
+        "sexo": "M",
+        "edad": 33,
+        "direccion": "Barquisimeto"
+    },
+    "2":{
+        "nombre": "Abner",
+        "sexo": "M",
+        "edad": 33,
+        "direccion": "Barquisimeto"
+    },
+    "3":{
+        "nombre": "Abner",
+        "sexo": "M",
+        "edad": 33,
+        "direccion": "Barquisimeto"
+    }
+}

@@ -1,0 +1,65 @@
+const http = require('http')
+
+const servidor = http.createServer((req, res) => {
+    res.writeHead(200, {'Content-Type': "text/html"})
+    res.write(` <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #2c3e50;
+        }
+
+        p {
+            color: #e74c3c;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #fecha {
+            font-weight: bold;
+            color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Página servida por servidor HTTP NodeJS</h1>
+        <p>helloooo</p>
+        <p>Fecha actual: <span id="fecha"></span></p>
+    </div>
+
+    <script>
+        const fecha = new Date().toLocaleDateString();
+        document.getElementById("fecha").innerHTML = fecha;
+    </script>
+</body>
+</html>`)
+    res.end()
+});
+
+servidor.listen(8000)
+console.log('Servidor web iniciado')
