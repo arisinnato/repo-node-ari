@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "ari",
+    "edad": "20",
+    "curso": "node"
+  },
+  {
+    "id": 2,
+    "nombre": "david",
+    "edad": "21",
+    "curso": "nodejs"
+  },
+  {
+    "id": 3,
+    "nombre": "ari otra vez",
+    "edad": "21",
+    "curso": "node"
+  },
+  {
+    "id": 4,
+    "nombre": "sisi",
+    "edad": "21",
+    "curso": "no se"
+  },
+  {
+    "id": 5,
+    "nombre": "ari",
+    "edad": "20",
+    "curso": "node"
+  }
+]
