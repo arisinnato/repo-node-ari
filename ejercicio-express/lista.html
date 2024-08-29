@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Estudiantes</title>
+</head>
+<body>
+    <h1>Estudiantes Registrados</h1>
+    <form action="/estudiante">
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Curso</th>
+                <th>Acciones</th>
+            </tr>
+            <!-- Aquí se inserta cada fila de estudiante dinámicamente -->
+            <!-- Ejemplo:
+            <tr>
+                <td>1</td>
+                <td>Juan Pérez</td>
+                <td>20</td>
+                <td>Matemáticas</td>
+                <td>
+                    <a href="/estudiante/1">Modificar</a>
+                    <button onclick="eliminarEstudiante('1')">Eliminar</button>
+                </td>
+            </tr>
+            -->
+        </table>
+    </form>
+    <h2><a href="/">Registrar otro estudiante</a></h2>
+    <script>
+    function eliminarEstudiante(id) {
+        if (confirm('¿Estás seguro de que deseas eliminar este estudiante?')) {
+            fetch('/estudiante/' + id, {
+                method: 'DELETE'
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+                location.reload();
+            });
+        }
+    }
+    </script>
+</body>
+</html>
