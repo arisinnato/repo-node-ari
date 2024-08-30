@@ -4,5 +4,17 @@
     "nombre": "ari",
     "edad": "21",
     "curso": "java"
+  },
+  {
+    "id": 1725024314080,
+    "nombre": "david",
+    "edad": "21",
+    "curso": "node"
+  },
+  {
+    "id": 1725024314081,
+    "nombre": "lino",
+    "edad": "20",
+    "curso": "nuevas tec"
   }
 ]
