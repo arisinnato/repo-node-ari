@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .actions a {
+            color: #2c3e50;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .actions a:hover {
+            text-decoration: underline;
+        }
+        .message {
+            margin-top: 20px;
+            color: #ffee00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Estudiantes</h1>
+        <form action="/estudiantes" method="POST">
+            <label for="nombre">Nombre del Estudiante:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="edad">Edad del Estudiante:</label>
+            <input type="number" id="edad" name="edad" required>
+            
+            <label for="curso">Curso del Estudiante:</label>
+            <input type="text" id="curso" name="curso" required>
+            
+            <input type="submit" value="Registrar Estudiante">
+        </form>
+    </div>
+    <h2>Lista de Estudiantes</h2>
+    <div id="estudiantes-list"></div>
+    
+    
+    <script>
+        async function fetchEstudiantes() {
+            try {
+                const response = await fetch('/estudiantes');
+                if (response.ok) {
+                    const html = await response.text();
+                    document.getElementById('estudiantes-list').innerHTML = html;
+                }
+            } catch (error) {
+                console.error('Error fetching students:', error);
+                document.getElementById('estudiantes-list').innerHTML = '<p class="message">No se pudieron cargar los datos de los estudiantes.</p>';
+            }
+        }
+    
+        document.addEventListener('DOMContentLoaded', fetchEstudiantes);
+    </script>
+</body>
+</html>
