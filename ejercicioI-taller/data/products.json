@@ -1,0 +1,26 @@
+[
+  {
+    "id": "5d1a0f05-f023-47c5-9f0c-e00e95ecf06a",
+    "name": "Producto 1",
+    "price": 100,
+    "quantity": 5
+  },
+  {
+    "id": "a1165152-5c09-42cb-8e03-a04e9f735f8c",
+    "name": "Producto 1",
+    "price": 100,
+    "quantity": 5
+  },
+  {
+    "id": "c1263655-3931-42ec-b376-31fc5723486c",
+    "name": "Producto 2",
+    "price": 100,
+    "quantity": 2
+  },
+  {
+    "id": "396b0f54-96e6-4f68-a2b2-60e91a50c032",
+    "name": "Producto 3",
+    "price": 50,
+    "quantity": 10
+  }
+]
