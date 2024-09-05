@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a mi servidor HTTP personalizado</h1>
+        <p>Autor: <span id="autor"></span></p>
+        <p>Fecha de inicio del servidor: <span id="fechaInicio"></span></p>
+    </div>
+
+    <script>
+        fetch('/autor')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('autor').textContent = data.autor;
+                document.getElementById('fechaInicio').textContent = data.fechaInicio;
+            });
+    </script>
+</body>
+</html>
+
