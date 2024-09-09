@@ -1,31 +1,12 @@
-const express = require('express');
-const fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
-const router = express.Router();
 
-const productsFilePath = './data/products.json'
+const express = require('express');  
+const router = express.Router();  
+const productController = require('../controllers/Productcontroller');  
 
-const {
-  createProduct,
-  getProductById,
-  updateProduct,
-  deleteProduct,
-  filterProducts
-} = require('../controllers/Productcontroller');
-
-//Crear un Producto
-router.post('/', createProduct);
-
-//Consultar un Producto por ID
-router.get('/id', getProductById);
-
-//Modificar un Producto
-router.put('/:id', updateProduct);
-
-//Eliminar un Producto
-router.delete('/:id', deleteProduct);
-
-//Filtrar Productos
-router.get('/:id', filterProducts);
+router.post('/post', productController.createProduct);  
+router.get('/:id', productController.getProductById);  
+router.put('/:id', productController.updateProduct);  
+router.delete('/:id', productController.deleteProduct);  
+router.get('/', productController.filterProducts);  
 
 module.exports = router;
